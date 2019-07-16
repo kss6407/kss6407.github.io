@@ -1,0 +1,89 @@
+﻿<HTML> 
+
+<HEAD>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="keywords" >
+
+<!--  
+<link rel="stylesheet" href="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.css">
+<script src="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.js"></script>
+-->
+
+
+<!--  
+<link rel="stylesheet" href="chartist.css" />
+<link rel="stylesheet" href="chartist.scss" />
+
+<script src="all.js"></script>
+<script src="chartist.js"></script>
+
+
+<link rel="stylesheet" type="text/css" media="screen" href="../chartist-js-develop/dist/chartist.css"></script>
+-->
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.css">
+<script src="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.js"></script>
+
+
+
+
+</HEAD>
+
+
+<BODY>
+<script type="text/javascript" src="../chartist-js-develop/dist/chartist.js"></script>
+<script src="axis.js"></script>
+<script src="chartist-plugin-pointlabels.js"></script>
+
+
+<div class="ct-chart ct-golden-section" id="chart1"></div>
+<div class="ct-chart ct-golden-section" id="chart2"></div>
+
+
+<script>
+var options = {
+  width: 500
+ ,height: 300
+ ,fullWidth: true
+ ,chartPadding: {  right: 40  }
+}; 
+
+var responsiveoptions = {
+ axisX: {
+    labelInterpolationFnc: function(value, index) 
+    {
+      //alert( 'W' + value + "," + index );
+      return 'W' + value  ;
+    
+    }
+  }
+ ,axisY: {
+    onlyInteger: true,
+    offset: 20
+  }
+}; 
+
+
+// Инициализируем линейный график через контейнер с ID chart1
+new Chartist.Line('#chart1', 
+  {
+    labels: [0, 1, 2, 3, 4],
+    series: [[0, 100, 120, 180, 200]]
+  }
+ ,options
+ ,responsiveoptions
+);
+
+/*
+  // Инициализируем линейный график через контейнер с ID chart2
+  new Chartist.Bar('#chart2', {
+    labels: [1, 2, 3, 4],
+    series: [[5, 2, 8, 3]]
+  },options);
+*/
+</script>
+
+
+</BODY>
+</HTML>
+
